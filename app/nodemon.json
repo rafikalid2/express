@@ -1,0 +1,11 @@
+{
+	"env": {
+		"host": "localhost",
+		"port": 8000,
+
+      	"db_host": "mongodb://localhost/",
+      	"db_username": "",
+      	"db_password": "",
+      	"db_name": "fast"
+    }
+}

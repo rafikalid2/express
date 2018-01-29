@@ -1,0 +1,15 @@
+<% extend('../layouts/master') %>
+<div id="home">
+	<!-- Slider area start -->
+		<img src="images/slider/slideshow_1.jpg" alt="" style="width: 100%">
+	<!-- slider area end -->
+	
+	<script src="socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect('http://localhost:8000');
+
+		socket.on('news', data => {
+			console.log('data');
+		})
+	</script>
+</div>

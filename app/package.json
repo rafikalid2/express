@@ -1,0 +1,25 @@
+{
+  "name": "getfast",
+  "version": "1.0.0",
+  "description": "get all you want fastly",
+  "main": "app.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Brsolab",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-ejs-extend": "0.0.1",
+    "express-session": "^1.15.6",
+    "minimatch": "^3.0.4",
+    "mongodb": "^3.0.1",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

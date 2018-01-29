@@ -1,0 +1,10 @@
+input, select, textarea, button {
+	border: 1px solid $g-border-color;
+	outline: none;
+	background: none;
+	padding: 0 10px;
+	height: 44px;
+}
+textarea {
+	height: 100px;
+}
