@@ -2,6 +2,7 @@
 {
 	_id			: 'ObjectId',
 	email		: 'String',
+	password	: 'String',
 	phone		: 'String',
 	// voir indexation dans mango
 		// auths		: [ // auth2 via other websites (gmail, fb, ...)
@@ -10,18 +11,20 @@
 		// 		id		: 'string'
 		// 	}
 		// ],
-		auths : [
-			'{name}-{id}',
-			//examples
-			'fb-124525215245',
-			'gmail-s4e5fs4ze55sdf5'
-		]
+	auths : [
+		'{name}-{id}',
+		//examples
+		'fb-124525215245',
+		'gmail-s4e5fs4ze55sdf5'
+	],
 	
 	firstName	: 'String',
 	lastName	: 'String',
 	fullName	: 'String',
 
 	gender	: 'String', // male/female
+
+	birthDay: 'Date',
 
 	picture : {
 		at	: 'Date', // date created of curret picture
@@ -43,7 +46,9 @@
 			country		: 'String', // country code
 			status		: 'int', // 1: able, 0: disabled
 		}
-	]
+	],
+
+	language: 'String' // language code
 }
 
 // extra
