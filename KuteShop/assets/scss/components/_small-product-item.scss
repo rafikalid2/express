@@ -1,0 +1,58 @@
+/*
+	- 2.9. Small product item
+ */
+
+.small-product {
+	.product-image {
+		position: relative;
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+	.product-details {
+		margin-top: 20px;
+		.product-category{
+			font-size: 14px;
+		}
+		.product-title {
+			font-weight: bold;
+			font-size: 16px;
+		}
+		.product-price {
+			margin-top: 15px;
+			.current-price {
+			  	color: $text-color;
+			  	font-size: 20px;
+			  	font-weight: 700;
+			}
+			.origin-price {
+			  	font-size: 13px;
+			  	color: $text-color-xlight;
+			  	font-weight: 700;
+			  	text-decoration: line-through;
+			}
+		}
+	}
+
+	// this style for horizontal small product
+	&.horizontal {
+		.product-details {
+			margin-top: 0;
+			.product-title {
+				font-size: 13px;
+				font-weight: normal;
+			}
+			.product-price {
+				margin-top: 0;
+				.current-price {
+				  	color: $text-color;
+				  	font-size: 14px;
+				}
+				.origin-price {
+				  	font-size: 12px;
+				}
+			}
+		}
+	}
+}

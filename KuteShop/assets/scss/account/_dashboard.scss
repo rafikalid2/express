@@ -1,0 +1,28 @@
+.dashboard{
+	.me-info-block{
+		text-align: center;
+		border: 1px solid $border-color;
+		padding: 20px 0;
+		background: #f2f2f2;
+
+		@media (max-width: 991px) {
+			.title{margin-bottom: 15px}
+		}
+
+		.value{
+			font-weight: bold;
+			font-size: 14px;
+
+			&.has-value{
+				color: #ff4900;
+			}
+		}
+
+	}
+
+	.recommended-product{
+		.more{
+			text-align: right;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+/*
+	- 3.7. error
+ */
+
+#error {
+	text-align: center;
+	padding: 50px 0;
+	.error-code{
+		font-family: 'Montserrat', sans-serif;
+	    font-weight: 400;
+	    font-size: 300px;
+	    line-height: 300px;
+	    color: #343434;
+	    letter-spacing: -25px;
+	}
+	.description{
+		font-size: 70px;
+	    line-height: 100px;
+	    color: #343434;
+	    font-weight: 300;
+	    margin-bottom: 5px;
+	}
+	.text{
+		font-weight: 400;
+	    color: #808080;
+	    font-size: 14px;
+	    line-height: 24px;
+	    a{
+	    	color: $color-secondary;
+	    }
+	}
+}

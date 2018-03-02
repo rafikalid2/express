@@ -1,0 +1,120 @@
+<% extend('../layouts/master') %>
+
+<div id="cart">
+	<!-- Breadcrumb area start -->
+	<section class="breadcrumb text-left" style="background-image: url(images/breadcrumbs/breadcrumbs.jpg)";>
+        <div class="container">
+            <div class="breadcrumb-title dark"><%= __('mycart') %></div>
+            <div class="breadcrumb-box dark">
+                <a href="#"><%= __('home') %></a>
+                <a href="#"><%= __('mycart') %></a>                        
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb area end -->
+	
+	<!-- Cart content area start -->
+    <section class="cart-content">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col">
+		            <div class="table-responsive">
+		                <table class="cart-table">
+		                    <tr>
+		                        <th><%= __('productName') %></th>
+		                        <th><%= __('unitPrice') %></th>
+		                        <th><%= __('qty') %></th>
+		                        <th><%= __('subtotal') %></th>
+		                        <th></th>
+		                    </tr>
+		                    <tr>
+                                <td>
+                                    <div class="ultra-small-product">
+                                        <a href="#" class="image"><img src="images/products/small/p1.jpg" alt=""></a>
+                                        <div class="content">
+                                            <a href="#" class="tag">woman clothing</a>
+                                            <a href="#" class="title">Pullover Batwing Sleeve Zigzag</a>
+                                            <div class="sub-title">S / Dirty Pink</div>
+                                            <div class="description">Zigzag Clothing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><%= currencySymbol %>99,00</td>
+                                <td>
+                                    <!-- <div class="quantity-selector detail-info-entry">
+                                        <div class="entry number-minus">&nbsp;</div>
+                                        <input type="number" value="1">
+                                        <div class="entry number-plus">&nbsp;</div>
+                                    </div> -->
+                                    <input type="number" value="1">
+                                </td>
+                                <td><div class="subtotal"><%= currencySymbol %>990,00</div></td>
+                                <td><a class="remove-button"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="ultra-small-product">
+                                        <a href="#" class="image"><img src="images/products/small/p4.jpg" alt=""></a>
+                                        <div class="content">
+                                            <a href="#" class="tag">woman clothing</a>
+                                            <a href="#" class="title">Pullover Batwing Sleeve Zigzag</a>
+                                            <div class="sub-title">S / Dirty Pink</div>
+                                            <div class="description">Zigzag Clothing</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><%= currencySymbol %>99,00</td>
+                                <td>
+                                    <input type="number" value="1">
+                                </td>
+                                <td><div class="subtotal"><%= currencySymbol %>990,00</div></td>
+                                <td><a class="remove-button"><i class="fa fa-times"></i></a></td>
+                            </tr>
+		                </table>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </section>
+    <!-- Cart content area end -->
+
+	<!-- Cart buttons -->
+    <div class="cart-btn-container">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col d-flex justify-content-end">
+        			<a class="btn btn-outline-dark"><%= __('updateCart') %></a>
+    				<a class="btn btn-outline-dark"><%= __('continueShopping') %></a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+	<!-- Cart coupon and proceed to checkout area start -->
+	<section class="coupon-procced">
+		<div class="container">
+			<div class="row">
+				<div class="col-7">
+					<div class="coupon-container">
+                        <h3 class="title"><%= __('discountCode') %></h3>
+                        <form>
+                            <label><%= __('discountSubTitle') %></label>
+                            <input type="text" class="form-control" placeholder="Coupon code">
+                            <input class="submit form-control" type="submit" value="<%= __('apply') %>" />
+                        </form>
+                    </div>
+				</div>
+				<div class="col-5">
+					<div class="cart-total-container">
+                        <div class="sub-total"><%= __('subtotal') %>: <i><%= currencySymbol %>990,00</i></div>
+                        <div class="sub-total"><%= __('shipping') %>: <i><%= currencySymbol %>150,00</i></div>
+                        <div class="total"><%= __('total') %>: <%= currencySymbol %>1029,79</div>
+                        <a class="btn proceed-btn" href="checkout"><%= __('proceedToCheckout') %></a>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Cart coupon and proceed to checkout area end -->
+
+</div>

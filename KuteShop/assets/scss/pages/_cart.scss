@@ -1,0 +1,88 @@
+/*
+	- 3.4. Cart
+ */
+
+#cart {
+	margin-bottom: 40px;
+	.cart-content {
+		margin-top: 70px;
+		.cart-table{
+			width: 100%;
+			td{
+				vertical-align: middle;
+				padding:30px;
+				border-bottom: 1px solid $border-color;
+				&:first-child{
+					padding-left: 0!important;
+				}
+				&:last-child{padding-right: 0; padding-left: 0;}
+			}
+			th{
+				vertical-align: middle;
+				padding: 25px 30px;
+				font-size: 16px;
+				line-height: 20px;
+				color: $text-color;
+				border-top: 1px solid $border-color;
+				border-bottom: 1px solid $border-color;
+				&:first-child{
+					padding-left: 100px!important;
+				}
+				&:last-child{padding-right: 0; padding-left: 0;}
+			}
+			.subtotal{
+				font-size: 18px;
+				line-height: 28px;
+				font-weight: 600;
+			}
+			.remove-button{
+				cursor: pointer;
+			}
+		}
+	}
+	.cart-btn-container {
+		margin: 20px 0;
+		.btn {
+			margin-left: 10px;
+			background: none !important;
+			border-radius: 0;
+			border-color: $border-color;
+			padding: 4px 15px;
+		}
+	}
+	.coupon-container{
+		.submit {
+			margin-top: 10px;
+			cursor: pointer;
+			&:hover{
+				background: $color-primary;
+				color: $text-color-white;
+			}
+		}
+	}
+	.cart-total-container{
+		border: 1px solid $border-color;
+		padding: 20px;
+		text-align: right;
+		.sub-total {
+			color: $text-color-light;
+			line-height: 20px;
+			i {
+				margin-left: 10px;
+			}
+		}
+		.total{
+			font-size: 20px;
+			line-height: 40px;
+		}
+		.proceed-btn{
+			background: $bg-color-black;
+			border-radius: 0;
+			border: 0;
+			color: $text-color-white;
+			display: block;
+			padding: 15px;
+			margin: 10px 0;
+		}
+	}
+}

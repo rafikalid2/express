@@ -1,0 +1,161 @@
+/*
+    - 2.2. Footer
+ */
+#footer {
+    background: $bg-color-black;
+    padding-top: 60px;
+    .footer-witget {
+        position: relative;
+        i {
+            font-size: 40px;
+            color: #fff;
+        }
+    }
+    .footer-content {
+        display: inline-block;
+        margin-left: 12px;
+        position: absolute;
+        top: 5px;
+        p {
+            color: white;
+            line-height: 22px;
+            margin-bottom: 0;
+        }
+        .map-content {
+            color: #a5aab5;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 10px;
+            margin-bottom: 3px;
+        }
+        .address {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+    .footer-witget-list {
+        // this style for the smal screen (Phone)
+        @media (max-width: 575px){
+            text-align: center;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            a {
+                font-size: 12px;
+                font-weight: 400;
+                color: #a5aab5;
+                &:hover {
+                    color: $link-hover-color;
+                    margin-left: 5px;
+                }
+            }
+        }
+        .witget-list {
+            margin-top: 28px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        input {
+            background: transparent none repeat scroll 0 0;
+            border: 1px solid #a5aab5;
+            border-radius: 0;
+            position: relative;
+            &:focus {
+                border-color: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                outline: 0;
+            }
+        }
+        p {
+            color: #a5aab5;
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 17px;
+            margin-top: 28px;
+        }
+        .social-link {
+            margin-top: 30px;
+        }
+        ul.social-link li {
+            display: inline-block;
+            a {
+                &:hover {
+                    margin-left: 0px;
+                    .fa-facebook-f {
+                        background: #3b5999;
+                        color: #fff;
+                    }
+                    .fa-twitter {
+                        background: #55acee;
+                        color: #fff;
+                    }
+                    .fa-google-plus {
+                        background: #DB4437;
+                        color: #fff;
+                    }
+                    .fa-vimeo {
+                        background: #1ab7ea;
+                        color: #fff;
+                    }
+                }
+                i {
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 100px;
+                    background: #a5aab5;
+                    font-size: 14px;
+                    color: #5c616e;
+                    text-align: center;
+                    line-height: 35px;
+                    margin-right: 7px;
+                    -webkit-transition: all 0.2s ease 0s;
+                    -o-transition: all 0.2s ease 0s;
+                    transition: all 0.2s ease 0s;
+                }
+            }
+        }
+        .language-currency {
+            margin-top: 20px;
+            .dropdown {
+                font-size: 13px;
+                > a {
+                    color: #a5aab5;
+                }
+               
+                img {
+                    margin-right: 5px;
+                }
+                .dropdown-menu {
+                    font-size: 13px;
+                    left: -25% !important;
+                }
+            }
+        }
+    }
+    .copyright {
+        border-top: 1px solid #a5aab5;
+        margin-top: 37px;
+        padding-top: 37px;
+        padding-bottom: 37px;
+        p {
+            font-size: 12px;
+            color: #a5aab5;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    }
+    .payment-method li {
+        display: inline-block;
+        a {
+            margin-right: 16px;
+        }
+    }
+}
+

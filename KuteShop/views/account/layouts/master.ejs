@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kute Shop</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="<%= process.env.HOST %>">
+
+    <link rel="icon" href="images/favicon.ico" />
+
+	 <!-- Font CSS (Via CDN) -->
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto'>
+
+    <!-- Admin Forms CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+
+
+    <!-- Jquery js -->
+	<script src="js/jquery.min.js"></script>
+
+</head>
+<body class="dashboard-page sb-l-o sb-r-c">
+
+	<!-- Start: Main -->
+    <div id="main">
+        <!-- Start: Header -->
+        <header class="navbar navbar-fixed-top bg-light">
+            <div class="navbar-branding">
+                <a class="navbar-brand" href="/">
+                	<img src="images/favicon.ico" alt="" style="width: 40px">
+                	Kute<b>Shop</b>
+                </a>
+                <span id="toggle_sidemenu_l" class="glyphicons glyphicons-show_lines"></span>
+                <ul class="nav navbar-nav pull-right hidden">
+                    <li>
+                        <a href="#" class="sidebar-menu-toggle">
+                            <span class="octicon octicon-ruby fs20 mr10 pull-right "></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="navbar-form navbar-left navbar-search ml5" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." value="Search...">
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown dropdown-item-slide">
+                    <a class="dropdown-toggle pl10 pr10" data-toggle="dropdown" href="#">
+                        <span class="octicon octicon-radio-tower fs18"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-hover dropdown-persist pn w350 bg-white animated animated-shorter fadeIn" role="menu">
+                        <li class="bg-light p8">
+                            <span class="fw600 pl5 lh30">Notifications</span>
+                            <span class="label label-warning label-sm pull-right lh20 h-20 mt5 mr5">12</span>
+                        </li>
+                        <li class="p10 br-t item-1">
+                            <div class="media">
+                                <a class="media-left" href="#"> <img src="assets/img/avatars/2.jpg" class="mw40" alt="holder-img"> </a>
+                                <div class="media-body va-m">
+                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p10 br-t item-2">
+                            <div class="media">
+                                <a class="media-left" href="#"> <img src="assets/img/avatars/3.jpg" class="mw40" alt="holder-img"> </a>
+                                <div class="media-body va-m">
+                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p10 br-t item-3">
+                            <div class="media">
+                                <a class="media-left" href="#"> <img src="assets/img/avatars/4.jpg" class="mw40" alt="holder-img"> </a>
+                                <div class="media-body va-m">
+                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p10 br-t item-4">
+                            <div class="media">
+                                <a class="media-left" href="#"> <img src="assets/img/avatars/5.jpg" class="mw40" alt="holder-img"> </a>
+                                <div class="media-body va-m">
+                                    <h5 class="media-heading mv5">Article <small class="text-muted">- 08/16/22</small> </h5> Last Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <% if(locale == 'fr') { %>
+                            <span class="flag-xs flag-fr"></span>
+                            <span class="fw600">Français</span>
+                        <% } else { %>
+                            <span class="flag-xs flag-us"></span>
+                            <span class="fw600">English</span>
+                        <% } %>
+                    </a>
+                    <ul class="dropdown-menu animated animated-short flipInX" role="menu">
+                        <li>
+                            <a href="/lang/en" class="fw600">
+                                <span class="flag-xs flag-us mr10"></span>
+                                English
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lang/fr" class="fw600">
+                                <span class="flag-xs flag-fr mr10"></span>
+                                Français
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="ph10 pv20 hidden-xs"> <i class="fa fa-circle text-tp fs8"></i>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> <img src="assets/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+                        <span><%= user.firstName + " " + user.lastName %></span>
+                        <span class="caret caret-tp hidden-xs"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-persist pn w250 bg-white" role="menu">
+                        <li class="of-h">
+                            <a href="#" class="fw600 p12 animated animated-short fadeInUp">
+                                <span class="fa fa-envelope pr5"></span><%= __('Messages') %>
+                                <span class="pull-right lh20 h-20 label label-warning label-sm">2</span>
+                            </a>
+                        </li>
+                        <li class="br-t of-h">
+                            <a href="#" class="fw600 p12 animated animated-short fadeInDown">
+                                <span class="fa fa-gear pr5"></span><%= __('Account_Settings') %> </a>
+                        </li>
+                        <li class="br-t of-h">
+                            <a href="/logout" class="fw600 p12 animated animated-short fadeInDown">
+                                <span class="fa fa-power-off pr5"></span><%= __('Logout') %> </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </header>
+        <!-- End: Header -->
+
+        <!-- Start: Sidebar -->
+        <aside id="sidebar_left" class="nano nano-primary affix">
+            <div class="nano-content">
+                <!-- sidebar menu -->
+                <ul class="nav sidebar-menu">
+                    <li class="sidebar-label pt20"><%= __('menu') %></li>
+
+                    <%# Dashboard %>
+                    <li class="active">
+                        <a href="account/store/dashboard">
+                            <span class="glyphicons glyphicons-home"></span>
+                            <span class="sidebar-title"><%= __('Dashboard') %></span>
+                        </a>
+                    </li>
+
+                    <%# Products %>
+					<li class="sidebar-label pt20"><%= __('Products') %></li>
+                    <li>
+                        <a href="account/store/products">
+                            <span class="glyphicons glyphicons-shopping_cart"></span>
+                            <span class="sidebar-title"><%= __('All_Products') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account/store/addproduct">
+                            <span class="glyphicons glyphicons-circle_plus"></span>
+                            <span class="sidebar-title"><%= __('Add_Product') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account/store/products">
+                            <span class="glyphicons glyphicons-tags"></span>
+                            <span class="sidebar-title"><%= __('Products_in_sale') %></span>
+                        </a>
+                    </li>
+
+                    <%# Orders %>
+					<li class="sidebar-label pt20"><%= __('Orders') %></li>
+                    <li>
+                        <a href="account/store/orders">
+                            <span class="fa fa-archive"></span>
+                            <span class="sidebar-title"><%= __('All_Orders') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account/store/orders">
+                            <span class="fa fa-bullseye"></span>
+                            <span class="sidebar-title"><%= __('Recent_orders') %></span>
+                        </a>
+                    </li>
+
+                    <%# Store %>
+					<li class="sidebar-label pt20"><%= __('Store') %></li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicons glyphicons-brush"></span>
+                            <span class="sidebar-title"><%= __('Apperence') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account/store/users">
+                            <span class="glyphicons glyphicons-group"></span>
+                            <span class="sidebar-title"><%= __('Users') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account/store/settings">
+                            <span class="glyphicons glyphicons-settings"></span>
+                            <span class="sidebar-title"><%= __('Settings') %></span>
+                        </a>
+                    </li>
+
+                    <%# Mail %>
+					<li class="sidebar-label pt20"><%= __('Mail') %></li>
+                    <li>
+                        <a href="account/store/inbox">
+                            <span class="glyphicons glyphicons-envelope"></span>
+                            <span class="sidebar-title"><%= __('Inbox') %></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicons glyphicons-group"></span>
+                            <span class="sidebar-title"><%= __('Sent') %></span>
+                        </a>
+                    </li>
+
+                    <%# Help %>
+					<li class="sidebar-label pt20"><%= __('Support') %></li>
+                    <li>
+                        <a href="account/store/help">
+                            <span class="fa fa-question"></span>
+                            <span class="sidebar-title"><%= __('help') %></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-toggle-mini">
+                    <a href="#">
+                        <span class="fa fa-sign-out"></span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Start: Content-Wrapper -->
+        <section id="content_wrapper">
+
+            <!-- Begin: Content -->
+			<%- content -%>
+            <!-- End: Content -->
+
+        </section>
+        <!-- End: Content-Wrapper -->
+
+    </div>
+    <!-- End: Main -->
+	
+    <script type="text/javascript" src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Theme Javascript -->
+    <script type="text/javascript" src="assets/js/utility/utility.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+	
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            "use strict";
+
+            // Init Theme Core      
+            Core.init({
+                sbm: "sb-l-c",
+            });
+        });
+    </script>
+
+</body>
+</html>

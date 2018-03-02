@@ -1,0 +1,164 @@
+<% extend('../layouts/master') %>
+
+<!-- Owl carousel css -->
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+
+<section class="dashboard user-account">
+	<div class="container">
+		<div class="row">
+
+			<%# Account sidebar %>
+			<%- include('layouts/user-account-sidebar') %>
+	
+			<!-- Account content area start -->
+			<div class="col-12 col-md-9 col-lg-10">
+
+				<!-- Info block -->
+				<div class="me-info-block">
+					<div class="row">
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value has-value">13</div>
+							<div class="title">All Orders</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value">0</div>
+							<div class="title">Awaiting Payment</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value">0</div>
+							<div class="title">Awaiting Shipment</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value has-value">3</div>
+							<div class="title">Awaiting Delivery</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value">0</div>
+							<div class="title">Awaiting Feedback</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-2">
+							<div class="value has-value">2</div>
+							<div class="title">Disputes</div>
+						</div>
+					</div>
+				</div>
+				<!-- /info block -->
+
+				<!-- Recently viewed products -->
+				<div class="recent-viewed-product">
+					<div class="row">
+						<div class="title-bar t-left">
+							<h1 class="title">Recently viewed products :</h1>
+						</div>
+					</div>
+
+					<!-- Product slider area start -->
+					<div class="row">
+						<div class="owl-carousel owl-carousel-theme in-box-nav" id="related-product-slider">
+							<% for (var i = 0; i < 10; i++) { -%>
+							<div class="col-12">
+								<div class="small-product horizontal">
+									<div class="product-image">
+										<a href=""><img src="images/products/small/p3.jpg"></a>
+									</div>
+									<div class="product-details">
+										<div class="product-title"><a href="">Women drees from zara</a></div>
+										<div class="product-price">
+											<span class="current-price"><%= currencySymbol %>290</span>
+											<span class="origin-price"><%= currencySymbol %>350</span>
+										</div>
+									</div>
+								</div>	
+							</div>
+							<% } -%>
+						</div>
+					</div>
+					<!-- Product slider area end -->
+				</div>
+				<!-- /Recently viewed products -->
+				
+				<!-- Recommended Products -->
+				<div class="recommended-product">
+					<div class="row">
+						<div class="title-bar t-left">
+							<h1 class="title">Recommended products :</h1>
+						</div>
+					</div>
+					<div class="row">
+						<% for (var i = 0; i < 16; i++) { -%>
+							<div class="col-sm-6 col-md-4 col-xl-3">
+								<div class="product-item">
+									<div class="inner-wrapper">
+										<div class="product-top">
+											<div class="stickers">
+												<!-- <div class="sticker-item new">New</div> -->
+												<!-- <div class="sticker-item sale">Sale !</div> -->
+												<!-- <div class="sticker-item out">Out of Stock</div> -->
+											</div>
+											<div class="product-images">
+												<a href="product"><img class="product-img" src="images/products/small/p1.jpg" alt=""></a>
+											</div>
+											<div class="actions-bar">
+												<a href="" class="action-item disabled"><i class="fa fa-cart-plus"></i></a> <!-- add disabled class to disable item -->
+												<a href="" class="action-item"><i class="fa fa-eye"></i></a>
+												<a href="" class="action-item"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+										<div class="product-details">
+											<div class="product-title"><a href="">Jacket for men Zara</a></div>
+											<div class="price-rating d-flex justify-content-between align-items-center">
+												<div class="product-price">
+													<span class="price sale"><%= currencySymbol %>195</span>
+													<span class="sale-price"><%= currencySymbol %>205</span>
+												</div>
+												<div class="product-rating">
+													<i class="star-rating">
+														<i class="value" style="width: 50%"></i>
+													</i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<% } -%>
+					</div>
+					<div class="row">
+						<div class="col-12 more">
+							<a href="#">View more <i class="fa fa-angle-double-right"></i></a>
+
+						</div>
+					</div>
+				</div>
+				<!-- /Recommended Products -->
+				
+			</div>
+			<!-- Account content area end -->
+		</div>
+	</div>
+</section>
+
+<!-- Product item image switcher -->
+<script src="js/product-item-switcher.js"></script>
+
+<!-- Owl-carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+
+<!-- Sliders script start -->
+<script>
+	$(document).ready(function(){
+
+	  	$("#related-product-slider").owlCarousel({
+	  		nav: true,
+	  		dots: false,
+	  		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+	  		responsive: {
+		  		0 	: {items: 1},
+		  		576 : {items: 2},
+		  		768 : {items: 3},
+		  		992 : {items: 4}
+	  		}
+	  	});
+	});
+</script>
+<!-- Sliders script end -->

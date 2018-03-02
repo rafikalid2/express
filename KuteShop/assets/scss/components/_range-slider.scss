@@ -1,0 +1,12 @@
+/*
+	- 2.16. Range slider
+ */
+
+.ui-slider{position: relative; height: 2px; background: #d9d9d9; margin-right: 8px; margin-bottom: 18px;}
+.ui-slider-range{height: 100%; position: absolute; left: 0; top: 0; background: #ca1515;}
+.ui-slider-handle{width: 8px; height: 8px; background: #ca1515; margin: -3px 0 0 0; position: absolute; cursor: pointer;}
+.range-price{font-size: 14px; color: #4c4c4c; line-height: 18px; float: left; line-height: 36px;}
+.range-price b{color: #333232; font-weight: 600;}
+.min-price, .max-price{display: inline-block;}
+.range-wrapper .button{float: right;}
+.range-wrapper:after{width: 100%; height: 0; clear: both; content: ""; display: block;}

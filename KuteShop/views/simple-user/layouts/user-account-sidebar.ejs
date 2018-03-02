@@ -1,0 +1,18 @@
+<div class="col-12 col-md-3 col-lg-2">
+	<div class="menu-sidebar">
+		<ul>
+			<li class="menu-item"><a href="account/user/dashboard">Dashboard</a></li>
+			<li class="menu-item"><a href="account/user/orders">My Orders</a></li>
+			<li class="menu-item"><a href="account/user/wishlist">My Wishlist</a></li>
+			<li class="menu-item"><a href="account/user/coupons">My Coupons</a></li>
+			<li class="menu-item"><a href="account/user/profile">My Profile</a></li>
+			<li class="menu-item"><a href="account/user/addresses">My Addresses</a></li>
+			<li class="menu-item"><a href="account/user/messages">Messages</a></li>
+			<% if (locals.user.store != null) { -%>
+				<li class="menu-item"><a href="account/store/dashboard"><%= __('My_store') %></a></li>
+			<% } else { -%>
+				<li class="menu-item"><a href="account/user/create-store"><%= __('create_store') %></a></li>
+			<% } -%>
+		</ul>
+	</div>
+</div>

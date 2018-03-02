@@ -1,0 +1,20 @@
+{
+	"First_name" 	: "First name",
+	"Last_name"  	: "Last name",
+	"Email" 	 	: "Email",
+	"Phone"			: "Phone",
+	"Country"		: "Country",
+	"Address" 		: "Address",
+	"Town_City"		: "Town / City",
+	"State"			: "State",
+	"PostCode_Zip"	: "PostCode / Zip",
+	"Password" 		: "Password",
+	"Confirm_password": "Confirm password",
+	"Order_notes"	: "Order notes",
+	"Street_address": "Street address",
+	"Appartment_Suite_etc" : "Appartment, Suite etc",
+	"optional" 		: "optional",
+	"Create_an_account": "Create an account",
+	"Create_an_account_text" : "Create an account by entering the information below. If you are a returning customer please login at the top of the page"
+
+} 

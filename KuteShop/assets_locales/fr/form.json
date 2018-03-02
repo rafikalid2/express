@@ -1,0 +1,20 @@
+{
+	"First_name" 	: "Prénom",
+	"Last_name"  	: "Nom",
+	"Email" 	 	: "Email",
+	"Phone"			: "Téléphone",
+	"Country"		: "Pays",
+	"Address" 		: "Adresse",
+	"Town_City"		: "Ville",
+	"State"			: "Etat",
+	"PostCode_Zip"	: "Code postal",
+	"Password" 		: "Mot de passe",
+	"Confirm_password": "Confirmez le mot de passe",
+	"Order_notes"	: "Notes d'ordre",
+	"Street_address": "Adresse de rue",
+	"Appartment_Suite_etc" : "Appartement..., etc",
+	"optional" 		: "optionnel",
+	"Create_an_account": "Créer un compte",
+	"Create_an_account_text" : "Créez un compte en entrant les informations ci-dessous. Si vous êtes déjà un client, connectez-vous en haut de la page"
+
+} 

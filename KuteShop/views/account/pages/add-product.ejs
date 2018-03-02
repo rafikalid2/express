@@ -1,0 +1,152 @@
+<% extend('../layouts/master') %>
+
+<!-- Flash messages area start -->
+<% if(messages.success){ %>
+    <div class="p25 pb5">
+        <div class="alert alert-success text-center mb5" role="alert">
+            <%= __(messages.success) %>
+        </div>
+    </div>
+<% } %>
+<!-- Flash messages area end -->
+
+<!-- Flash messages area start -->
+<% if(messages.error){ %>
+    <div class="p25 pb5">
+        <div class="alert alert-danger text-center mb5" role="alert">
+            <%= __(messages.error) %>
+        </div>
+    </div>
+<% } %>
+<!-- Flash messages area end -->
+
+
+<!-- Begin: Content -->
+<section id="content" class="table-layout animated fadeIn">
+
+    <!-- begin: .tray-center -->
+    <div class="tray tray-center p25 va-t posr">
+        
+        <div class="panel mb25 mt5">
+            <div class="panel-heading">
+                <span class="panel-title"> Add New Product</span>
+            </div>
+            <div class="panel-body p20 pb10">
+                <div class="tab-content pn br-n admin-form">
+                    <div id="tab1_1" class="tab-pane active">
+                        <form action="/account/store/addproduct" method="post" enctype="multipart/form-data">
+                            <div class="section row mbn">
+                                <div class="col-md-4">
+                                    <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
+                                        <div class="fileupload-preview thumbnail mb20">
+                                            <img data-src="holder.js/380x530" alt="holder">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-offset-7 col-xs-5" style="margin-bottom: 10px;">
+                                                <span class="button btn-system btn-file btn-block">
+                                                    <span class="fileupload-new">Select</span>
+                                                <span class="fileupload-exists">Change</span>
+                                                <input type="file" name="image">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 pl15">
+                                    <div class="section mb10">
+                                        <label for="name2" class="field prepend-icon">
+                                            <input type="text" name="title" id="name2" class="event-name gui-input br-light light" placeholder="Product Title">
+                                            <label for="name2" class="field-icon"><i class="fa fa-tag"></i></label>
+                                        </label>
+                                    </div>
+                                    <div class="section mb10">
+                                        <label for="product-category" class="field select">
+                                            <select id="product-category" name="category">
+                                                <option value="0" selected="selected">Product Category...</option>
+                                                <% for (var i = 0; i < categories.length ; i++) { -%>
+                                                    <option value="<%= categories[i]._id %>"><%= __(categories[i].title) %></option>
+                                                <% } -%>
+                                            </select>
+                                            <i class="arrow double"></i>
+                                        </label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 mb10">
+                                            <label for="product-price" class="field prepend-icon">
+                                                <input type="text" name="price" id="product-price" class="gui-input" placeholder="Product Price...">
+                                                <label for="product-price" class="field-icon"><i class="fa fa-usd"></i></label>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6 mb10">
+                                             <label for="name2" class="field prepend-icon">
+                                                <input type="text" name="qty" id="name2" class="event-name gui-input br-light light" placeholder="Product Quantity">
+                                                <label for="name2" class="field-icon"><i class="fa fa-cubes"></i></label>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="section mb10">
+                                        <label class="field prepend-icon">
+                                            <textarea style="height: 160px;" class="gui-textarea br-light bg-light" id="comment" name="description" placeholder="Product Description"></textarea>
+                                            <label for="comment" class="field-icon"><i class="fa fa-comments"></i></label>
+                                        </label>
+                                    </div>
+                                    <div class="section row mbn">
+                                        <div class="col-sm-offset-8 col-sm-4">
+                                            <p class="text-right">
+                                                <input type="submit" class="btn btn-primary" value="Save Order">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end: .tray-center -->
+
+</section>
+<!-- End: Content -->
+
+<!-- FileUpload JS -->
+<script type="text/javascript" src="vendor/plugins/fileupload/fileupload.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/holder.min.js"></script>
+
+<!-- Tagmanager JS -->
+<script type="text/javascript" src="vendor/plugins/tagsinput/tagsinput.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        "use strict";
+
+        // grant file-upload preview onclick functionality
+        $('.fileupload-preview').on('click', function() {
+            $('.btn-file > input').click();
+        });
+
+        // select dropdowns - placeholder like creation
+        var selectList = $('.admin-form select');
+        selectList.each(function(i, e) {
+            $(e).on('change', function() {
+                if ($(e).val() == "0") $(e).addClass("empty");
+                else $(e).removeClass("empty")
+            });
+        });
+        selectList.each(function(i, e) {
+            $(e).change();
+        });
+
+        // Init tagsinput plugin
+        $("input#tagsinput").tagsinput({
+            tagClass: function(item) {
+                return 'label bg-primary light';
+            }
+        });
+
+    });
+</script>

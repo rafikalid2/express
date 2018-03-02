@@ -1,0 +1,46 @@
+/*
+	- 2.13. Breadcrumb
+ */
+
+.breadcrumb {
+	padding: 40px 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid $border-color;
+	text-align: center;
+	background-size: cover;
+	border-radius: 0;
+	margin-bottom: 0;
+	.breadcrumb-title {
+		font-size: 36px;
+		line-height: 36px;
+		color: $text-color;
+		font-weight: 400;
+		letter-spacing: -1px;
+		&.dark{color: $text-color-black;}
+		&.light{color: $text-color-white;}
+	}
+	.breadcrumb-box {
+		a{
+			display: inline-block;
+			font-size: 13px;
+			color: $text-color;
+			line-height: 16px;
+			margin-right: 7px;
+			padding: 7px 0;
+			&:after {
+				content:"/";
+				display: inline-block;
+				margin-left: 7px;
+				font-size: 15px;
+			}
+			&:last-child:after{display: none;}
+		}
+		&.light {
+			a {color: #b7b7b7}
+		}
+		&.dark {
+			a {color: $text-color-black}
+		}
+	}
+}

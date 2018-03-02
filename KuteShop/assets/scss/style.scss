@@ -1,0 +1,135 @@
+/**
+ * Description: This file containes all css style for components
+ * Version: 1.0.0
+ * Last update: 2018-02-20
+ * Author: Coredigix - Abdelhakim Rafik
+ *
+ * Summary:
+ * 		1. Global
+ * 			- 1.1. Global
+ *		2. Componenets
+ *			- 2.1. Header
+ *          - 2.2.  Footer
+ *          - 2.3.  Countdown product item
+ *          - 2.4.  Star rating
+ *          - 2.5.  Form
+ *          - 2.6.  Category featured
+ *          - 2.7.  Full slider
+ *          - 2.8.  Titled slider
+ *          - 2.9.  Small product item
+ *          - 2.10. Ultra small product item
+ *          - 2.11. Elevate zoom
+ *          - 2.12. Owl carousel theme
+ *          - 2.13. Breadcrumb
+ *          - 2.14. Number input
+ *          - 2.15. Full product item
+ *          - 2.16. Range slider
+ *		3. Pages
+ *          - 3.1. Home
+ *          - 3.2. Product details
+ *			- 3.3. Checkout
+ *          - 3.4. Cart
+ *          - 3.5. Login and sign up
+ *          - 3.6. Shop
+ *          - 3.7. Error
+ *      4. User Account Style
+ *          - 4.1. global style
+ *          - 4.2. sidebar
+ *          - 4.3. dashboard
+ */
+
+/*======================================
+		1. Global
+  ====================================*/
+    // Variables
+    @import 'global/_variables.scss';
+
+  	// - 1.1. Global
+  	@import 'global/_global';
+
+/*======================================
+		2. Components
+  ====================================*/
+  	// - 2.1. Header
+  	@import 'components/_header';
+
+    // - 2.2. Footer
+    @import 'components/_footer';
+
+    // - 2.3. Countdown product item
+    @import 'components/_countdown-product-item';
+
+    // - 2.4. Star rating
+    @import 'components/_star-rating';
+
+    // - 2.5. Form
+    @import 'components/_form';
+
+    // - 2.6. Category featured
+    @import 'components/_category-featured';
+
+    // - 2.7. Full slider
+    @import 'components/_full-slider';
+
+    // - 2.8. Titled Slider
+    @import 'components/_titled-slider';
+
+    // - 2.9. Small product item
+    @import 'components/_small-product-item';
+
+    // - 2.10. Ultra small product item
+    @import 'components/_ultra-small-product-item';
+
+    // - 2.11. Elevate zoom
+    @import 'components/_elevate-zoom';
+
+    // - 2.12. Owl carousel theme
+    @import 'components/_owl-carousel-theme';
+
+    // - 2.13. Breadcrumb
+    @import 'components/_breadcrumb';
+
+    // - 2.14. Number input
+    @import 'components/_number-input';
+
+    // - 2.15. Full product item
+    @import 'components/_full-product-item';
+
+    // - 2.16. Range slider
+    @import 'components/_range-slider';
+
+/*======================================
+		3. Pages
+  ====================================*/
+    // - 3.1. Home
+    @import 'pages/_home';
+    
+    // - 3.2. Product details
+    @import 'pages/_product-details';
+    
+  	// - 3.3. Checkout
+  	@import 'pages/_checkout';
+
+    // - 3.4. Cart
+    @import 'pages/_cart';
+
+    // - 3.5. Login and sign up
+    @import 'pages/_login-signup';
+
+    // - 3.6. Shop
+    @import 'pages/_shop';
+
+    // - 3.7. Error
+    @import 'pages/_error';
+
+/*======================================
+        4. User Account Style
+  ====================================*/
+    // - 4.1. global style
+    @import 'account/_global';
+
+    // - 4.2. sidebar
+    @import 'account/_user-account-sidebar';
+
+    // - 4.3. dashboard
+    @import 'account/_dashboard';

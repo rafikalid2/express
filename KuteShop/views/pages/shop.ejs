@@ -1,0 +1,156 @@
+<% extend('../layouts/master') %>
+
+
+<div id="shop">
+	
+	<!-- Breadcrumb area start -->
+	<section class="breadcrumb text-left" style="background-image: url(images/breadcrumbs/breadcrumbs.jpg)";>
+        <div class="container">
+            <div class="breadcrumb-title dark"><%= __('Shop') %></div>
+            <div class="breadcrumb-box dark">
+                <a href="#"><%= __('home') %></a>
+                <a href="#"><%= __('Shop') %></a>                      
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb area end -->
+
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col-12 col-lg-3">
+				
+				<div class="block-container">
+					<h5 class="block-title"><%= __('categories') %> :</h5>
+					<ul class="list">
+						<% for (var i = 0; i < categories.length ; i++) { -%>
+	                         <li class="list-item"><a href="/shop?cat=<%= categories[i]._id %>"><%= __(categories[i].title) %></a></li>
+	                    <% } -%>
+					</ul>
+				</div>
+
+				<div class="block-container">
+					<h5 class="block-title"><%= __('Filter_by_Price') %> :</h5>
+					<div class="range-wrapper">
+                        <div id="prices-range"></div>
+                        <div class="range-price">
+                            <%= __('Price') %>: 
+                            <div class="min-price"><b><%= currencySymbol %><span>0</span></b></div>
+                            <b>-</b>
+                            <div class="max-price"><b><%= currencySymbol %><span>500</span></b></div>
+                        </div>
+                        <a class="button"><%= __('filter') %></a>
+                    </div>
+				</div>
+
+			</div>
+
+			<div class="col-12 col-lg-9">
+				<div class="shop-selector">
+					<div class="row">
+						<div class="col-auto mr-auto">
+							<label for=""><%= __('Sort by') %>: </label>
+							<select name="sort" id="" class="form-control">
+								<option value=""><%= __('price_desc') %></option>
+								<option value=""><%= __('price_asc') %></option>
+								<option value=""><%= __('new') %></option>
+							</select>
+						</div>
+						<div class="col-auto ">
+							<label for=""><%= __('Show') %>: </label>
+							<select name="sort" id="" class="form-control">
+								<option value="">20</option>
+								<option value="">30</option>
+								<option value="">35</option>
+								<option value="">45</option>
+							</select>
+							<%= __('per_page') %>
+						</div>
+					</div>
+					
+				</div>
+				<div class="row">
+					<% for (var i = 0; i < 20; i++) { -%>
+						<div class="col-sm-6 col-md-4 col-xl-3">
+							<div class="product-item">
+								<div class="inner-wrapper">
+									<div class="product-top">
+										<div class="stickers">
+											<!-- <div class="sticker-item new">New</div> -->
+											<!-- <div class="sticker-item sale">Sale !</div> -->
+											<!-- <div class="sticker-item out">Out of Stock</div> -->
+										</div>
+										<div class="product-images">
+											<a href="product"><img class="product-img" src="images/products/small/p1.jpg" alt=""></a>
+										</div>
+										<div class="actions-bar">
+											<a href="" class="action-item disabled"><i class="fa fa-cart-plus"></i></a> <!-- add disabled class to disable item -->
+											<a href="" class="action-item"><i class="fa fa-eye"></i></a>
+											<a href="" class="action-item"><i class="fa fa-heart"></i></a>
+										</div>
+									</div>
+									<div class="product-details">
+										<div class="product-title"><a href="">Jacket for men Zara</a></div>
+										<div class="price-rating d-flex justify-content-between align-items-center">
+											<div class="product-price">
+												<span class="price sale"><%= currencySymbol %>195</span>
+												<span class="sale-price"><%= currencySymbol %>205</span>
+											</div>
+											<div class="product-rating">
+												<i class="star-rating">
+													<i class="value" style="width: 50%"></i>
+												</i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% } -%>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col d-flex justify-content-end">
+				<nav aria-label="Page navigation example">
+				  	<ul class="pagination">
+				    	<li class="page-item">
+					      	<a class="page-link" href="#" aria-label="Previous">
+					        	<span aria-hidden="true">&laquo;</span>
+					        	<span class="sr-only">Previous</span>
+					      	</a>
+				    	</li>
+				    	<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				    	<li class="page-item"><a class="page-link" href="#">2</a></li>
+				    	<li class="page-item"><a class="page-link" href="#">3</a></li>
+				    	<li class="page-item">
+					      	<a class="page-link" href="#" aria-label="Next">
+					        	<span aria-hidden="true">&raquo;</span>
+					        	<span class="sr-only">Next</span>
+					      	</a>
+				    	</li>
+				  	</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- range slider -->
+<script src="js/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var minVal = parseInt($('.min-price span').text());
+        var maxVal = parseInt($('.max-price span').text());
+        $( "#prices-range" ).slider({
+            range: true,
+            min: minVal,
+            max: maxVal,
+            step: 5,
+            values: [ minVal, maxVal ],
+            slide: function( event, ui ) {
+                $('.min-price span').text(ui.values[ 0 ]);
+                $('.max-price span').text(ui.values[ 1 ]);
+            }
+        });
+    });
+</script>

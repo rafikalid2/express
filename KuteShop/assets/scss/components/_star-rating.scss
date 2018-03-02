@@ -1,0 +1,15 @@
+/*
+	- 2.4. Star rating
+ */
+.star-rating{
+	background: url('../images/stars.png') repeat-x -1px -86px;
+	width: 75px;
+	height: 14px;
+	display: inline-block;
+	.value{
+		background: url('../images/stars.png') repeat-x 0 0;
+		max-width: 100%;
+		height: 14px;
+		display: block;
+	}
+}

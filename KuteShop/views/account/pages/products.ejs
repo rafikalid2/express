@@ -1,0 +1,696 @@
+<% extend('../layouts/master') %>
+
+<!-- Begin: Content -->
+<section id="content" class="table-layout animated fadeIn">
+
+    <!-- begin: .tray-center -->
+    <div class="tray tray-center p25 va-t posr">
+    	
+        <!-- recent orders table -->
+        <div class="panel">
+            <div class="panel-menu p12 admin-form theme-primary">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="field select">
+                            <select id="filter-category" name="filter-category">
+                                <option value="0">Filter by Category</option>
+                                <option value="1">Smart Phones</option>
+                                <option value="2">Smart Watches</option>
+                                <option value="3">Notebooks</option>
+                                <option value="4">Desktops</option>
+                                <option value="5">Music Players</option>
+                            </select>
+                            <i class="arrow"></i>
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="field select">
+                            <select id="filter-status" name="filter-status">
+                                <option value="0">Filter by Status</option>
+                                <option value="1">Active</option>
+                                <option value="2">Inactive</option>
+                                <option value="3">Low Stock</option>
+                                <option value="4">Out of Stock</option>
+                            </select>
+                            <i class="arrow"></i>
+                        </label>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="field select">
+                            <select id="bulk-action" name="bulk-action">
+                                <option value="0">Actions</option>
+                                <option value="1">Edit</option>
+                                <option value="2">Delete</option>
+                                <option value="3">Active</option>
+                                <option value="4">Inactive</option>
+                            </select>
+                            <i class="arrow double"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body pn">
+                <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                    <thead>
+                        <tr class="bg-light">
+                            <th class="text-center">Select</th>
+                            <th class="">Image</th>
+                            <th class="">Product Title</th>
+                            <th class="">SKU</th>
+                            <th class="">Price</th>
+                            <th class="">Stock</th>
+                            <th class="text-right">Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_1.jpg">
+                            </td>
+                            <td class="">Apple Ipod 4G - Silver</td>
+                            <td class="">#21362</td>
+                            <td class="">$215</td>
+                            <td class="">1,400</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_2.jpg">
+                            </td>
+                            <td class="">Apple Smart Watch - 1G</td>
+                            <td class="">#15262</td>
+                            <td class="">$455</td>
+                            <td class="">2,100</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_6.jpg">
+                            </td>
+                            <td class="">Apple Macbook 4th Gen - Silver</td>
+                            <td class="">#66362</td>
+                            <td class="">$1699</td>
+                            <td class="">6,100</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_7.jpg">
+                            </td>
+                            <td class="">Apple Iphone 16GB - Silver</td>
+                            <td class="">#51362</td>
+                            <td class="">$1299</td>
+                            <td class="">5,200</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_3.jpg">
+                            </td>
+                            <td class="">Apple Ipod Nano 2G - Silver</td>
+                            <td class="">#4132</td>
+                            <td class="">$995</td>
+                            <td class="">11,000</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_4.jpg">
+                            </td>
+                            <td class="">Apple Macbook 3rd Gen - Silver</td>
+                            <td class="">#21362</td>
+                            <td class="">$1,150</td>
+                            <td class="">4,300</td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_2.jpg">
+                            </td>
+                            <td class="">Apple Smart Watch - 1G</td>
+                            <td class="">#15262</td>
+                            <td class="">$455</td>
+                            <td class="text-warning"><b>145</b>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-warning br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Disabled
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_5.jpg">
+                            </td>
+                            <td class="">Apple iMac 32" - Silver</td>
+                            <td class="">#21362</td>
+                            <td class="">$1299</td>
+                            <td class="text-warning"><b>180</b>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-warning br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Disabled
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_3.jpg">
+                            </td>
+                            <td class="">Apple Ipod Nano 2G - Silver</td>
+                            <td class="">#4132</td>
+                            <td class="">$995</td>
+                            <td class="text-danger"><b>0 - Sold Out</b>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Sold Out
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_6.jpg">
+                            </td>
+                            <td class="">Apple Macbook 4th Gen - Silver</td>
+                            <td class="">#66362</td>
+                            <td class="">$1699</td>
+                            <td class="text-danger"><b>0 - Sold Out</b>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Sold Out
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <label class="option block mn">
+                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <span class="checkbox mn"></span>
+                                </label>
+                            </td>
+                            <td class="w100">
+                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/stock/products/thumb_7.jpg">
+                            </td>
+                            <td class="">Apple Iphone 16GB - Silver</td>
+                            <td class="">#51362</td>
+                            <td class="">$1299</td>
+                            <td class="text-danger"><b>0 - Sold Out</b>
+                            </td>
+                            <td class="text-right">
+                                <div class="btn-group text-right">
+                                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Sold Out
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#">Edit</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delete</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archive</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Complete</a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="#">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Canceled</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- end: .tray-center -->
+
+    <!-- begin: .tray-right -->
+    <aside class="tray tray-right tray290 va-t pn" data-tray-height="match">
+
+        <!-- menu quick links -->
+        <div class="p20 admin-form">
+
+            <h4 class="mt5 text-muted fw500"> Filter Products</h4>
+
+            <hr class="short">
+
+            <div class="section mb15">
+                <label for="order-id" class="field prepend-icon">
+                    <input type="text" name="order-id" id="order-id" class="gui-input" placeholder="Product SKU #">
+                    <label for="order-id" class="field-icon"><i class="fa fa-tag"></i>
+                    </label>
+                </label>
+            </div>
+
+            <h6 class="fw400">Price Range($)</h6>
+            <div class="section row mb15">
+                <div class="col-md-6">
+                    <label for="price1" class="field prepend-icon">
+                        <input type="text" name="price1" id="price1" class="gui-input" placeholder="0">
+                        <label for="price1" class="field-icon"><i class="fa fa-usd"></i>
+                        </label>
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <label for="price2" class="field prepend-icon">
+                        <input type="text" name="price2" id="price2" class="gui-input" placeholder="1000">
+                        <label for="price2" class="field-icon"><i class="fa fa-usd"></i>
+                        </label>
+                    </label>
+                </div>
+            </div>
+
+            <h6 class="fw400">Sales Date</h6>
+            <div class="section row">
+                <div class="col-md-6">
+                    <label for="date1" class="field prepend-icon">
+                        <input type="text" name="date1" id="date1" class="gui-input" placeholder="01/01/15">
+                        <label for="date1" class="field-icon"><i class="fa fa-calendar"></i>
+                        </label>
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <label for="date2" class="field prepend-icon">
+                        <input type="text" name="date2" id="date2" class="gui-input" placeholder="01/31/15">
+                        <label for="date2" class="field-icon"><i class="fa fa-calendar"></i>
+                        </label>
+                    </label>
+                </div>
+            </div>
+
+            <h6 class="fw400">Search Categories</h6>
+            <div class="section mb15">
+                <label class="field select">
+                    <select id="filter-categories" name="filter-categories">
+                        <option value="0" selected="selected">Filter by Categories</option>
+                        <option value="1">Electronics</option>
+                        <option value="2">Software</option>
+                    </select>
+                    <i class="arrow double"></i>
+                </label>
+            </div>
+
+            <h6 class="fw400">Search Customers</h6>
+            <div class="section mb15">
+                <label class="field select">
+                    <select id="filter-customers" name="filter-customers">
+                        <option value="0" selected="selected">Filter by Vendor</option>
+                        <option value="1">Michael</option>
+                        <option value="2">David</option>
+                        <option value="3">Sara</option>
+                        <option value="4">Tasha</option>
+                    </select>
+                    <i class="arrow double"></i>
+                </label>
+            </div>
+
+            <hr class="short">
+
+            <div class="section row">
+                <div class="col-sm-12">
+                    <button class="btn btn-default btn-sm ph25" type="button">Search</button>
+                    <label class="field option ml15">
+                        <input type="checkbox" name="info">
+                        <span class="checkbox"></span> <span class="text-muted">Save Search</span>
+                    </label>
+                </div>
+                <div class="col-sm-7 hidden">
+                    <label class="field option mt10">
+                        <input type="checkbox" name="info" checked>
+                        <span class="checkbox"></span>Save Search
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+    <!-- end: .tray-right -->
+
+</section>
+<!-- End: Content -->
+
+<!-- FileUpload JS -->
+<script type="text/javascript" src="vendor/plugins/fileupload/fileupload.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/holder.min.js"></script>
+
+<!-- Tagmanager JS -->
+<script type="text/javascript" src="vendor/plugins/tagsinput/tagsinput.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        "use strict";
+
+        // grant file-upload preview onclick functionality
+        $('.fileupload-preview').on('click', function() {
+            $('.btn-file > input').click();
+        });
+
+        // select dropdowns - placeholder like creation
+        var selectList = $('.admin-form select');
+        selectList.each(function(i, e) {
+            $(e).on('change', function() {
+                if ($(e).val() == "0") $(e).addClass("empty");
+                else $(e).removeClass("empty")
+            });
+        });
+        selectList.each(function(i, e) {
+            $(e).change();
+        });
+
+        // Init tagsinput plugin
+        $("input#tagsinput").tagsinput({
+            tagClass: function(item) {
+                return 'label bg-primary light';
+            }
+        });
+
+    });
+</script>

@@ -1,0 +1,520 @@
+<% extend('../layouts/master') %>
+
+
+<!-- Begin: Content -->
+<section id="content" class="animated fadeIn">
+
+    <div class="row">
+
+        <!-- message tray -->
+        <div class="col-md-3 pl5-md message-tray">
+
+            <!-- quick compose button -->
+            <button type="button" id="quick-compose" class="btn btn-danger light btn-block compose-btn">Quick Compose</button>
+
+            <!-- message tray panel -->
+            <div class="panel">
+                <div class="panel-body p10">
+                    <h4 class="ph10 mv5"> Menu </h4>
+                    <ul class="nav nav-messages p5" role="menu">
+                        <li class="">
+                            <a href="#" class="fw600 p8 animated animated-short fadeInDown">
+                                <span class="fa fa-gear pr5"></span> Email Settings
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                <span class="fa fa-envelope pr5"></span> Messages
+                                <span class="pull-right lh20 h-20 label label-warning label-sm">12</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="fw600 p8 animated animated-short fadeInUp">
+                                <span class="fa fa-user pr5"></span> Social
+                                <span class="pull-right lh20 h-20 label label-warning label-sm">9</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="fw600 p8 animated animated-short fadeInUp">
+                                <span class="fa fa-trash-o pr5"></span> Spam
+                                <span class="pull-right lh20 h-20 label label-muted label-sm">14</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h4 class="ph10 mv15"> Tags </h4>
+                    <hr class="mn br-light">
+                    <ul class="nav nav-messages p5" role="menu">
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Clients
+                                <span class="fa fa-circle text-warning fs14 pull-right lh20"></span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Contractors
+                                <span class="fa fa-circle text-system fs14 pull-right lh20"></span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Employees
+                                <span class="fa fa-circle text-primary fs14 pull-right lh20"></span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Suppliers
+                                <span class="fa fa-circle text-alert fs14 pull-right lh20"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h4 class="ph10 mv15"> Labels </h4>
+                    <hr class="mn br-light">
+                    <ul class="nav nav-messages p5" role="menu">
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Meetings
+                                <span class="pull-right lh20 h-20 label label-success label-sm">8</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Work
+                                <span class="pull-right lh20 h-20 label label-info label-sm">11</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Competition
+                                <span class="pull-right lh20 h-20 label label-primary label-sm">4</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="text-dark fw600 p8 animated animated-short fadeInUp">
+                                Promotions
+                                <span class="pull-right lh20 h-20 label label-system label-sm">16</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- message listing panel -->
+        <div class="col-md-9 prn-md animated fadeIn">
+            <div class="panel">
+
+                <!-- message toolbar header -->
+                <div class="panel-menu">
+                    <div class="row table-layout">
+                        <div class="hidden-xs hidden-sm col-md-3">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default light"><i class="fa fa-refresh"></i>
+                                </button>
+                                <button type="button" class="btn btn-default light"><i class="fa fa-pencil"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-9 text-right">
+                            <button type="button" class="btn btn-danger light visible-xs-inline-block mr10">Compose</button>
+                            <span class="hidden-xs va-m text-muted mr15"> Showing <strong>15</strong> of <strong>253</strong> </span>
+                            <div class="btn-group mr10">
+                                <button type="button" class="btn btn-default light hidden-xs"><i class="fa fa-star"></i>
+                                </button>
+                                <button type="button" class="btn btn-default light hidden-xs"><i class="fa fa-calendar"></i>
+                                </button>
+                                <button type="button" class="btn btn-default light"><i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="btn-group mr10">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default light dropdown-toggle ph8" data-toggle="dropdown">
+                                        <span class="fa fa-tags"></span>
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li>
+                                            <a href="#">Work</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Important</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Favorites</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-plus pr5"></span> Create New</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default light dropdown-toggle ph8 br-tp-left" data-toggle="dropdown">
+                                        <span class="fa fa-folder"></span>
+                                        <span class="caret ml5"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li>
+                                            <a href="#">Work</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Important</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Favorites</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-plus pr5"></span> Create New</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default light"><i class="fa fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="btn btn-default light"><i class="fa fa-chevron-right"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- message listings table -->
+                <div class="panel-body pn br-t-n">
+                    <table id="message-table" class="table admin-form theme-warning tc-checkbox-1">
+                        <thead>
+                            <tr class="">
+                                <th class="text-center hidden-xs">Select</th>
+                                <th class="hidden-xs">Star</th>
+                                <th>Sender</th>
+                                <th class="hidden-xs">Label</th>
+                                <th>Subject</th>
+                                <th class="hidden-xs"></th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="message-unread">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Sony Inc</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-warning mr10 fs11"> Work </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"><i class="fa fa-paperclip fs15 text-muted va-b"></i>
+                                </td>
+                                <td class="text-right fw600">March 11</td>
+                            </tr>
+                            <tr class="message-unread">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Disney</td>
+                                <td class="hidden-xs"></td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"><i class="fa fa-paperclip fs15 text-muted va-b"></i>
+                                </td>
+                                <td class="text-right fw600">March 11</td>
+                            </tr>
+                            <tr class="message-unread">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Marvel</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-system mr10 fs11"> Meeting </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right fw600">March 11</td>
+                            </tr>
+                            <tr class="message-unread">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Microsoft</td>
+                                <td class="hidden-xs"></td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right fw600">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                            <tr class="message-read">
+                                <td class="hidden-xs">
+                                    <label class="option block mn">
+                                        <input type="checkbox" name="mobileos" value="FR">
+                                        <span class="checkbox mn"></span>
+                                    </label>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="rating block mn pull-left">
+                            <input class="rating-input" id="r1" type="radio" name="custom">
+                            <label class="rating-star" for="r1"><i class="fa fa-star va-m"></i>
+                            </label>
+                        </span>
+                                </td>
+                                <td class="">Facebook</td>
+                                <td class="hidden-xs">
+                                    <span class="badge badge-info mr10 fs11"> Social </span>
+                                </td>
+                                <td class="">Lorem ipsum dolor sit amet, adipiscing eli</td>
+                                <td class="hidden-xs"></td>
+                                <td class="text-right">March 11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End: Content -->

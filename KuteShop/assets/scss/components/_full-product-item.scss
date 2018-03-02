@@ -1,0 +1,121 @@
+/*
+	- 2.15. Full product item
+ */
+
+.product-item{
+	margin: 15px 0;
+	
+	@media (min-width: 768px) {
+		&:hover{
+			.variants{
+				visibility: visible !important;
+			}
+			.actions-bar{
+				transform: scale(1) !important;
+				visibility: visible !important;
+			}
+		}
+	}
+	
+	// for the small version of the product item
+	&.p-small{
+		.product-price{
+			.price{
+				font-size: 14px !important;
+			}
+			.sale-price{
+				font-size: 12px !important;
+			}
+		}
+	}
+	&.p-margin{
+		margin: 5px 10px;
+	}
+	
+	.inner-wrapper{
+
+		.product-top{
+			position: relative;
+
+			.product-images{
+				img{width: 100%}
+			}
+			
+			.stickers{
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				z-index: 2;
+
+				.sticker-item{
+					padding: 2px 5px;
+					margin: 2px 0;
+					text-align: center;
+					border-radius: 3px;
+					text-transform: uppercase;
+					font-size: 10px;
+					color: #fff;
+
+					&.new{background: green}
+					&.sale{background: #eb5a46}
+					&.out{background: #e0e0e0; color: #000}
+				}
+			}
+
+			.actions-bar{
+				position: absolute;
+				bottom: 10px;
+				left: 15%;
+				background: rgba(255,255,255,0.9);
+				width: 70%;
+				padding: 5px;
+				border-radius: 3px;
+				box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+
+				@media (min-width: 768px) {
+					transform: scale(0.7);
+					transition: all 0.22s ease-in-out;
+					visibility: hidden;
+				}
+
+				.action-item{
+					color: #727f88;
+					font-size: 16px;
+					display: inline-block;
+					width: 31%;
+					text-align: center;
+
+					&.disabled{
+						pointer-events: none !important;
+						cursor: default !important;
+						color: #d0d0d0;
+					}
+				}
+			}
+		}
+		.product-details{
+			.product-title{
+				font-size: 14px;
+				font-family: "Open Sans";
+				text-transform: uppercase;
+			}
+			.product-price{
+				display: inline-block;
+				.price{
+					font-size: 16px;
+					font-weight: bold;
+
+					&.sale{
+						color: #e60000;
+					}
+				}
+				.sale-price{
+					text-decoration: line-through;
+					color: #bcbcbc;
+					margin-left: 3px;
+				}
+			}
+			.product-rating{display: inline-block;}
+		}
+	}
+}

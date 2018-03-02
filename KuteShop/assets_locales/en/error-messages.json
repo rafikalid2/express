@@ -1,0 +1,8 @@
+{
+	"invalidEmail"			: "Your email is invalid",
+	"allFieldsRequired"		: "All fields required",
+	"passwordNotMatches" 	: "Password not matches",
+	"rulesNotAccepted"		: "Please accept the conditions",
+	"emailOrPasswordInvalid": "Your email or password invalid",
+	"pageNotFound" 			: "Page not found"
+}

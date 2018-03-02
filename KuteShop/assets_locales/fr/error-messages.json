@@ -1,0 +1,8 @@
+{
+	"invalidEmail"			: "Votre email est invalide",
+	"allFieldsRequired"		: "Tous les champs obligatoires",
+	"passwordNotMatches" 	: "Mot de passe ne correspond pas",
+	"rulesNotAccepted"		: "Veuillez accepter les conditions",
+	"emailOrPasswordInvalid": "Votre email ou mot de passe incorrect",
+	"pageNotFound" 			: "Page non trouvée"
+}

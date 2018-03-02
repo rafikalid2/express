@@ -1,0 +1,56 @@
+/*
+	- 2.12. Owl carousel theme
+ */
+
+.owl-carousel-theme{
+	.owl-nav{
+		position: absolute;
+		width: 100%;
+		top: calc(50% - 15px);
+		left: -2px;
+		display: flex;
+		justify-content: space-between;
+
+		.owl-next, .owl-prev{
+			font-size: 20px;
+			padding: 10px;
+			border-radius: 3px;
+
+			&:hover{
+				color: $color-secondary;
+			}
+		}
+	}
+
+	&.in-box-nav {
+		.owl-nav {
+			padding: 0 20px;
+		}
+	}
+	
+	.owl-dots {
+		position: absolute;
+		bottom: 0;
+		left: 5px;
+  		-webkit-tap-highlight-color: transparent;
+
+  		.owl-dot {
+    		display: inline-block;
+    		zoom: 1;
+    		*display: inline;
+
+    		&.active span{background: #869791}
+
+    		span {
+		      	width: 10px;
+		      	height: 10px;
+		      	margin: 5px 7px;
+		      	background: #D6D6D6;
+		      	display: block;
+		      	-webkit-backface-visibility: visible;
+		      	transition: opacity 200ms ease;
+		      	border-radius: 30px;
+		    }
+		}
+	}
+}

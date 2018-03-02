@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kute Shop</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="images/favicon.ico" />
+
+    <base href="<%= process.env.HOST %>">
+
+	<!-- Google fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans|Yanone+Kaffeesatz|Karla|Montserrat">
+	<!-- Bootstrap style css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Font awesome css -->
+	<link rel="stylesheet" href="css/fontawesome.min.css">
+	<!-- Select 2 css -->
+	<link rel="stylesheet" href="css/select2.min.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+	<!-- Style css -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Jquery js -->
+	<script src="js/jquery.min.js"></script>
+
+    <style>
+        .select2-dropdown.select2-dropdown--below {width: 200px !important;}
+    </style>
+
+</head>
+<body>
+
+    <!-- Flash messages area start -->
+    <% if(messages.success){ %>
+        <div class="alert alert-success mb-0 text-center" role="alert">
+            <%= __(messages.success) %>
+        </div>
+    <% } %>
+    <!-- Flash messages area end -->
+
+	<!-- Header area start -->
+	<header id="header">
+        <!-- Top header start -->
+        <div class="top-header d-none d-md-block">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-auto">
+                        <ul>
+                            <li class="top-header-item">
+                                <i class="fa fa-phone"></i> +212 5 24 83 66 91
+                            </li>
+                            <!-- <li class="top-header-item">
+                                <a href=""><i class="fas fa-envelope"></i> <%= __('contactus') %></a>
+                            </li> -->
+                            <li class="top-header-item">
+                                <div class="dropdown">
+                                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <% if (currency == 'usd') { -%>
+                                            <i class="fas fa-dollar-sign"></i>
+                                            USD
+                                        <% } else if(currency == 'eur') { -%>
+                                            <i class="fas fa-euro-sign"></i>
+                                            EUR
+                                        <% } else if(currency == 'pound') { -%>
+                                            <i class="fas fa-pound-sign"></i>
+                                            POUND
+                                        <% } -%>
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="/?currency=usd"><i class="fas fa-dollar-sign"></i> USD</a>
+                                        <a class="dropdown-item" href="?currency=eur"><i class="fas fa-euro-sign"></i> EUR</a>
+                                        <a class="dropdown-item" href="?currency=pound"><i class="fas fa-pound-sign"></i> POUND</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="top-header-item">
+                                <div class="dropdown">
+                                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <% if(locale == 'fr') { %>
+                                            <img alt="email" src="images/flag/fr.jpg" />
+                                            Français
+                                        <% } else { %>
+                                            <img alt="email" src="images/flag/en.jpg" />
+                                            English
+                                        <% } %>
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="/lang/en"><img alt="email" src="images/flag/en.jpg" />English</a>
+                                        <a class="dropdown-item" href="/lang/fr"><img alt="email" src="images/flag/fr.jpg" />Français</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-auto">
+                        <ul>
+                            <% if(locals.user){ %>
+                                <li class="top-header-item">
+                                    <div class="dropdown">
+                                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <%= __('myaccount') %>
+                                            <i class="fa fa-caret-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="/account/user/dashboard"><%= __('dashboard') %></a>
+                                            <a class="dropdown-item" href="#"><%= __('wishlist') %></a>
+
+                                            <% if(locals.user.store != null){ %>
+                                                <a class="dropdown-item" href="/account/store/dashboard"><%= __('My_store') %></a>
+                                            <% } %>
+
+                                            <a class="dropdown-item" href="/logout"><%= __('logOut') %></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            <% } else{ %>
+                                <li class="top-header-item">
+                                    <a href="/login"><%= __('login') %></a>
+                                </li>
+                                <li class="top-header-item">
+                                    <a href="/signup"><%= __('signup') %></a>
+                                </li>
+                            <% } %>
+                            <li class="top-header-item">
+                                <a href=""><%= __('help') %>!</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Top header end -->
+            
+        <!-- Main header start -->
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-4 col-xl-3 text-center text-lg-left logo">
+                        <a href="#"><img src="images/logo.png" /></a>
+                    </div>
+                    <div class="col-12 col-sm-7 col-lg-5 col-xl-6 header-search-box">
+                        <form class="form-inline">
+                              <div class="form-group form-category">
+                                <select class="select-category" id="category-select">
+                                    <option value="0"><%= __('allCategories') %></option>
+                                    <% for (var i = 0; i < categories.length ; i++) { -%>
+                                        <option value="<%= categories[i]._id %>"><%= __(categories[i].title) %></option>
+                                    <% } -%>
+                                </select>
+                              </div>
+                              <div class="form-group input-serach">
+                                <input type="text"  placeholder="<%= __('keyword') +" "+ __('here') %>...">
+                              </div>
+                              <button type="submit" class="pull-right btn-header"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div id="cart-block" class="col-12 col-sm-5 col-lg-3 shopping-cart-box">
+                        <a class="cart-link" href="cart">
+                            <span class="title"><%= __('mycart') %></span>
+                            <span class="total">0 <%= __('items') %> - <%= currencySymbol %>0.00</span>
+                            <button class="pull-right btn-header"><i class="fas fa-shopping-cart"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main header end -->
+
+        <!-- Navbar header start -->
+        <nav class="navbar-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-5 col-lg-4">
+                        <div class="dropdown category-menu">
+                            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                                <%= __('categories') %>
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul>
+                                    <% for (var i = 0; i < categories.length ; i++) { -%>
+                                         <li><a class="dropdown-item" href="#"><i class="fas fa-mobile"></i><%= __(categories[i].title) %></a></li>
+                                    <% } -%>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-7 col-lg-8 d-flex align-content-center">
+                        <div class="navbar navbar-expand-md">
+                            <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <%= __('menu') %>
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarContent">
+                                <div class="navbar-nav">
+                                  <a class="nav-item nav-link" href="/"><%= __('home') %></a>
+                                  <a class="nav-item nav-link" href="shop"><%= __('products') %></a>
+                                  <a class="nav-item nav-link" href="#"><%= __('stores') %></a>
+                                  <a class="nav-item nav-link" href="#"><%= __('topDeals') %></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar header end -->
+    </header>
+    <!-- Header area end -->
+	
+	<%- content %>
+
+    <!-- Footer area start -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="logo mb-5">
+                        <a href="#"><img src="images/logo-footer.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-witget mb-5">
+                        <i class="material-icons">place</i>
+                        <div class="footer-content">
+                            <p class="map-content"><%= __('reachUs') %></p>
+                            <p class="address">65, Av Med VI Gueliz Marrakech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-witget mb-5">
+                        <i class="material-icons">mail_outline</i>
+                        <div class="footer-content">
+                            <p class="map-content"><%= __('contactus') %></p>
+                            <p class="address">Support@kuteshop.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-witget mb-5">
+                        <i class="material-icons">phone_in_talk</i>
+                        <div class="footer-content">
+                            <p class="map-content"><%= __('talkWithUs') %></p>
+                            <p class="address">+212 5 24 83 66 91</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-witget-list mb-4">
+                        <h3><%= __('myaccount') %></h3>
+                        <ul class="witget-list">
+                            <li><a href="#"><%= __('myaccount') %></a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-witget-list mb-4">
+                        <h3><%= __('shopping') %></h3>
+                        <ul class="witget-list">
+                            <li><a href="#"><%= __('mycart') %></a></li>
+                            <li><a href="#">Your Orders</a></li>
+                            <li><a href="#">Addresses</a></li>
+                            <li><a href="#">Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-witget-list mb-4">
+                        <h3><%= __('others') %></h3>
+                        <ul class="witget-list">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="/account/user/create-store"><%= __('create_store') %></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-witget-list mb-4">
+                        <h3><%= __('newsletter') %></h3>
+                        <p>Please register to receive these
+                            great deals from us.</p>
+                        <ul class="social-link">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fab fa-vimeo"></i></a></li>
+                        </ul>
+                        <div class="language-currency">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="dropdown">
+                                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <% if(locale == 'fr') { %>
+                                                <img alt="email" src="images/flag/fr.jpg" />
+                                                Francais
+                                            <% } else { %>
+                                                <img alt="email" src="images/flag/en.jpg" />
+                                                English
+                                            <% } %>
+                                            <i class="fa fa-caret-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="/lang/en"><img alt="email" src="images/flag/en.jpg" />English</a>
+                                            <a class="dropdown-item" href="/lang/fr"><img alt="email" src="images/flag/fr.jpg" />Francais</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="dropdown">
+                                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <% if (currency == 'usd') { -%>
+                                                <i class="fas fa-dollar-sign"></i>
+                                                USD
+                                            <% } else if(currency == 'eur') { -%>
+                                                <i class="fas fa-euro-sign"></i>
+                                                EUR
+                                            <% } else if(currency == 'pound') { -%>
+                                                <i class="fas fa-pound-sign"></i>
+                                                POUND
+                                            <% } -%>
+                                            <i class="fa fa-caret-down"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="?currency=usd"><i class="fas fa-dollar-sign"></i> USD</a>
+                                            <a class="dropdown-item" href="?currency=eur"><i class="fas fa-euro-sign"></i> EUR</a>
+                                            <a class="dropdown-item" href="?currency=pound"><i class="fas fa-pound-sign"></i> POUND</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <p><span><i class="fa fa-copyright"></i></span> 2018 KuteShop. - <%= __('All_Right_Reserved') %></p>
+                        <ul class="text-center payment-method">
+                            <li><a href="#"><img src="images/payment-icon/1.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/payment-icon/2.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/payment-icon/3.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/payment-icon/4.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer area end -->
+
+
+    <!-- Popper js this for bootstrap dropdown -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Select 2 js -->
+    <script src="js/select2.min.js"></script>
+    <!-- Select 2 init -->
+    <script>
+        $('#category-select').select2();
+    </script>
+</body>
+</html>

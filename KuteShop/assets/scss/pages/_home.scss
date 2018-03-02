@@ -1,0 +1,76 @@
+/*
+	- 3.1. Home
+ */
+
+#home {
+	.proposition-section {
+		.countdown-product {
+			margin-bottom: 20px;
+		}
+		.titled-slider {
+			.small-product {
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.category-featured-section {
+		background: $bg-color-gray;
+	}
+	.services-section {
+		margin: 30px 0;
+		.services-item{
+			border-right: 1px solid $border-color;
+			border-bottom: 1px solid $border-color;
+			padding-bottom: 15px;
+			min-height: 120px;
+			@media (min-width: 768px) {
+				&:nth-child(3n){
+					border-right: none;
+				}
+				&:nth-child(n+4){
+					border-bottom: none;
+				}	
+			}
+			@media (min-width: 576px) and (max-width: 767px) {
+				&:nth-child(2n){
+					border-right: none;
+				}
+				&:nth-child(n+5){
+					border-bottom: none;
+				}	
+			}
+			@media (max-width: 575px) {
+				border-right: none;
+				text-align: center;
+				&:last-child{
+					border-bottom: none;
+				}
+				.text {
+					padding: 15px !important;
+				}
+			}
+			
+			.image{
+				text-align: center;
+				color: #333333;
+				padding-left: 30px;
+				font-size: 14px;
+				text-transform: uppercase;
+				font-weight: normal;
+				h3{
+					font-size: 14px;
+					color: #333333;
+					font-weight: 600;
+					margin-top: 10px;
+				}
+			}
+			.text{
+				padding-top: 15px;
+				color: #919191;
+				padding-left: 0;
+				padding-right: 30px;
+
+			}
+		}
+	}
+}

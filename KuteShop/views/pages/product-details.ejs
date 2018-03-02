@@ -1,0 +1,317 @@
+<% extend('../layouts/master') %>
+
+<div id="product-details">
+	
+	<!-- Breadcrumb area start -->
+	<section class="breadcrumb text-left" style="background-image: url(images/breadcrumbs/breadcrumbs.jpg);">
+        <div class="container">
+            <div class="breadcrumb-title dark">UCB White Printed T-Shirt</div>
+            <div class="breadcrumb-box dark">
+                <a href="#"><%= __('home') %></a>
+                <a href="#"><%= __('Shop') %></a>
+                <a href="#">UCB White Printed T-Shirt</a>                         
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb area end -->
+
+	<!-- Product item top area start -->
+	<section class="product-top-section pt-5 pb-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-5">
+					<div class="slide-show">
+						<div class="product-image d-none d-lg-block">
+							<img src="images/products/big/p7-2.jpg" id="product-image" data-zoom-image="images/products/zoom/p7-2.jpg">
+						</div>
+						<div class="product-images-slider">
+							<ul id="smallGallery" class="owl-carousel owl-carousel-theme">
+								<li><a href="#" data-image="images/products/big/p7-2.jpg" data-zoom-image="images/products/zoom/p7-2.jpg" >
+									<img src="images/products/small/p1.jpg">
+								</a></li>
+								<li><a href="#" data-image="images/products/big/p2.jpg" data-zoom-image="images/products/zoom/p7-2.jpg" >
+									<img src="images/products/small/p2.jpg">
+								</a></li>
+								<li><a href="#" data-image="images/products/big/p4.jpg" data-zoom-image="images/products/zoom/p7-3.jpg" >
+									<img src="images/products/small/p4.jpg">
+								</a></li>
+
+								<li><a href="#" data-image="images/products/big/p2.jpg" data-zoom-image="images/products/zoom/p7-2.jpg" >
+									<img src="images/products/small/p2.jpg">
+								</a></li>
+								<li><a href="#" data-image="images/products/big/p4.jpg" data-zoom-image="images/products/zoom/p7-3.jpg" >
+									<img src="images/products/small/p4.jpg">
+								</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-7">
+					<div class="product-info">
+						<!-- Title -->
+						<div class="product-section product-title">
+							<h1>UCB White Printed T-Shirt</h1>
+						</div>
+						<!-- Price and review  -->
+						<div class="product-section">
+							<div class="product-price">
+								<span class="current-price sale"><%= currencySymbol %>195 ~ <%= currencySymbol %>225</span>
+								<span class="origin-price"><%= currencySymbol %>300</span>
+							</div>
+							<div class="product-status">
+								<div class="availability">
+									<i class="fa fa-check"></i>
+									<%= __('In_Stock') %>
+								</div>
+								<div class="product-rating">
+									 <i class="star-rating">
+			                            <i class="value" style="width: 89%"></i>
+			                        </i>
+									<span class="reviews">
+										(1) <%= __('Write_a_Review') %>
+									</span>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Product options -->
+						<form action="">
+							<!-- Options -->
+							<div class="product-section">
+								<div class="product-options">
+									<div class="row option">
+										<div class="col-12 col-md-4 col-xl-3 option-title">Color :</div>
+										<div class="col-12 col-md-8 col-xl-9 option-values">
+											<label class="value-item">
+												<input type="radio" name="color" value="red">
+												<span class="sp-value value-color"></span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="color" value="red">
+												<span class="sp-value value-color" style="background: #582"></span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="color" value="red">
+												<span class="sp-value value-color" style="background: #159"></span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="color" value="red">
+												<span class="sp-value value-color" style="background: #357"></span>
+											</label>
+										</div>
+									</div>
+									<div class="row option">
+										<div class="col-12 col-md-4 col-xl-3 option-title">Size :</div>
+										<div class="col-12 col-md-8 col-xl-9 option-values">
+											<label class="value-item">
+												<input type="radio" name="size" value="s">
+												<span class="sp-value value-rect">S</span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="size" value="m">
+												<span class="sp-value value-rect">M</span>
+											</label>
+
+											<label class="value-item">
+												<input type="radio" name="size" value="xxl">
+												<span class="sp-value value-rect">XXL</span>
+											</label>
+										</div>
+									</div>
+									<div class="row option">
+										<div class="col-12 col-md-4 col-xl-3 option-title">Accessories :</div>
+										<div class="col-12 col-md-8 col-xl-9 option-values">
+											<label class="value-item">
+												<input type="checkbox" name="size" value="s">
+												<span class="sp-value value-rect">Battery</span>
+											</label>
+											<label class="value-item">
+												<input type="checkbox" name="size" value="m">
+												<span class="sp-value value-rect">Charger</span>
+											</label>
+
+											<label class="value-item">
+												<input type="checkbox" name="size" value="xxl">
+												<span class="sp-value value-rect">Case</span>
+											</label>
+										</div>
+									</div>
+									<div class="row option">
+										<div class="col-12 col-md-4 col-xl-3 option-title">Style :</div>
+										<div class="col-12 col-md-8 col-xl-9 option-values">
+											<label class="value-item">
+												<input type="radio" name="style" value="s">
+												<span class="sp-value value-rect"><img src="images/products/p1.min.jpg" alt=""></span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="style" value="s">
+												<span class="sp-value value-rect"><img src="images/products/p2.min.jpg" alt=""></span>
+											</label>
+											<label class="value-item">
+												<input type="radio" name="style" value="s">
+												<span class="sp-value value-rect"><img src="images/products/p3.min.jpg" alt=""></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Qte and buy button -->
+							<div class="product-section">
+								<div class="row actions align-items-end">
+									<div class="col-5 col-md-4 col-xl-3 product-quantity">
+										<label><%= __('qty') %></label>
+										<input class="form-control" type="number" name="qte" value="1" min="1" max="10">
+									</div>
+									<div class="col-7 col-md-8 col-xl-9 add-to-cart-btn">
+										<button class="add-btn"><%= __('Add_to_cart') %></button>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						<!-- Wishlist and share -->
+						<div class="product-section">
+							<div class="add-to-wishlist">
+								<a href="">
+									<i class="far fa-heart"></i>
+									<%= __('Add_to_wishlist') %>
+								</a>
+							</div>
+							<div class="share">
+								<%= __('Share_this') %>
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-twitter"></i></a>
+								<a href=""><i class="fab fa-google-plus-g"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Product item top area end -->
+
+	<!-- Product details area start -->
+	<section class="product-store-details">
+		<div class="container">
+			<div class="row"> 
+				<div class="col-12 col-md-5 col-lg-4">
+					<div class="store-info">
+						<div class="store-title">
+							<i class="fa fa-check approuved"></i>
+							<div class="name-country">
+								<h1 class="store-name">Awesome Store</h1>
+								<h3 class="store-country">Morroco</h3>
+								<div class="ratting">
+									<i class="star">
+										<i class="value" style="width: 55%"></i>
+									</i>
+								</div>
+							</div>
+						</div>
+						<div class="actions">
+							<a href="#">
+								<i class="fa fa-envelope"></i>
+								<%= __('Contact_Store') %>
+							</a>
+							<a href="#">
+								<i class="fa fa-building"></i>
+								<%= __('Visit_Store') %>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-7 col-lg-8">
+					<div class="details-content">
+						<h6><%= __('Product_specifics') %> :</h6>
+						<table class="details-table">
+							<% for (var i = 0; i < 10; i++) { -%>
+								<tr>
+									<th>Type :</th>
+									<td>LED Headlamp</td>
+									<th>Emmiter :</th>
+									<td>Cree Xm-l T6</td>
+								</tr>
+							<% } -%>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Product details area end -->
+
+	<!-- Product description area start -->
+	<section class="product-description">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="tab-bg" style="margin-top: 50px;">
+						<h5><%= __('Description') %> :</h5>
+					</div>
+					<div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae cum sequi accusamus magni, eius maiores ea saepe repudiandae magnam incidunt minus repellendus vitae, sint asperiores odit illum quia, vero corrupti.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Product description area end -->
+
+	<!-- Related product area start -->
+	<section class="related-product mt-5 mb-5">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h4 class="section-title mb-3"><%= __('Related_products') %> :</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="owl-carousel owl-carousel-theme in-box-nav" id="related-product-slider">
+					<% for (var i = 0; i < 10; i++) { -%>
+					<div class="col-12">
+						<div class="small-product horizontal">
+							<div class="product-image">
+								<a href=""><img src="images/products/small/p3.jpg"></a>
+							</div>
+							<div class="product-details">
+								<div class="product-title"><a href="">Women drees from zara</a></div>
+								<div class="product-price">
+									<span class="current-price"><%= currencySymbol %>290</span>
+									<span class="origin-price"><%= currencySymbol %>350</span>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<% } -%>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Related product area end -->
+
+	<!-- Elevate zoom js -->
+	<script src="js/elevate.zoom.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('#product-image').elevateZoom({
+				gallery: "smallGallery",
+				galleryActiveClass: 'active',
+			});
+
+		  	$("#related-product-slider, #smallGallery").owlCarousel({
+		  		nav: true,
+		  		dots: false,
+		  		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+		  		responsive: {
+			  		0 	: {items: 1},
+			  		576 : {items: 2},
+			  		768 : {items: 3},
+			  		992 : {items: 4}
+		  		}
+		  	});
+		});
+	</script>
+</div>

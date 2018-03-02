@@ -1,0 +1,24 @@
+<% extend('../layouts/master') %>
+
+<div id="error">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<% if (locals.errorCode) { -%>
+					<div class="error-code"><%= errorCode %></div>
+				<% } else { -%>
+					<div class="error-code">404</div>
+				<% } -%>
+	           
+	            <% if (locals.errorMessage) { -%>
+	            	<div class="description"><%= __(errorMessage)%></div>
+	            	<div class="text"><a href="/"><%= __('clickHere') %></a> <%= __('returnHome') %></div>
+	            <% } else { -%>
+	            	<div class="description"><%= __('pageNotFound')%></div>
+	            	<div class="text"><a href="/"><%= __('clickHere') %></a> <%= __('returnHome') %></div>
+	            <% } -%>
+	            
+			</div>
+		</div>
+	</div>
+</div>
